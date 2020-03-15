@@ -36,7 +36,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach ($companies as $company)
+                        <tr>
+                            <td>{{ $company->name }}</td>
+                            <td>{{ $company->created_at }}</td>
+                            <td>詳細</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         @endsection
