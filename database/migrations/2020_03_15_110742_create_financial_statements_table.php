@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFstatementTable extends Migration
+class CreateFinancialStatementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFstatementTable extends Migration
      */
     public function up()
     {
-        Schema::create('fstatement', function (Blueprint $table) {
+        Schema::create('financial_statements', function (Blueprint $table) {
             $table->unsignedInteger('company_id');
             $table->date('fisical_year')->comment('決算日');
             $table->integer('bs_current_assets')->default(0)->comment('流動資産（百万円）');
@@ -44,6 +44,6 @@ class CreateFstatementTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fstatement');
+        Schema::dropIfExists('financial_statements');
     }
 }
